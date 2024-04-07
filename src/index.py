@@ -24,9 +24,12 @@ while True:
         valor = float(input("Qual o valor do depositado: "))
 
         if valor > 0:
-            saldo += valor
-            extrato += f"Depósito: R$ {valor:.2f}\n" #interpolação de string
-
+            if valor <= 500:
+                saldo += valor
+                extrato += f"Depósito: R$ {valor:.2f}\n" #interpolação de string
+                print("deposito realizado com sucesso! ")
+            else:
+                print("Operação falhou! O valor deposítado excede o valor maxímo de R$ 500.00 por depósito. ")
         else:
             print("Operação falhou! O valor informado é invalido")   
 
